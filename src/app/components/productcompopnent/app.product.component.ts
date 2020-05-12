@@ -39,4 +39,17 @@ export class ProductComponent implements OnInit {
   getSelectedProduct(p: Product): void {
       this.product = Object.assign({}, p);
   }
+  deleteProduct(prd : Product): void{
+    this.products = this.logic.deleteProduct(prd)
+  }
+  sortProducts(): void{
+    this.products = this.logic.sortProducts();
+  }
+  reverseProducts():void {
+    this.products = this.logic.reverseProducts();
+  }
+
+  searchProducts(query: string){
+    this.products = this.logic.searchProducts(query);
+  }
 }

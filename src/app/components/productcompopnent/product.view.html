@@ -27,16 +27,28 @@
     </form>
 </div>
 <div class="container">
+    <div class="input-group">
+        <span class="input-group-addon">Search : </span>
+        <input type="text" class="form-control" (keyup) = "searchProducts($event.target.value)" placeholder="Search by product name/category">
+    </div>
+    <div class="radio">
+        <label><input type="radio" name="reverseProducts" (click) = "sortProducts()"> Sort </label>
+        <label><input type="radio" name="reverseProducts" (click) = "reverseProducts()"> Reverse</label>
+    </div>
     <table class="table table-striped table-bordered table-dark">
         <thead>
             <tr>
                 <th *ngFor="let h of headers">{{h}}</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let prd of products" (click)="getSelectedProduct(prd)">
                 <td *ngFor="let h of headers">
                     {{prd[h]}}
+                </td>
+                <td>
+                    <input type="button" value="Delete" class="btn btn-danger" (click)="deleteProduct(prd)">
                 </td>
             </tr>
         </tbody>
