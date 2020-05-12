@@ -1,27 +1,76 @@
-# Myngapp
+Generate package.json using command
+- npm init -y
+- package.json
+  - dependencies
+    - Runtime Dependencies on Production
+      - Included in Production Build int the file 'vendor.js'
+      - external Dependencis of angular are Build into 'polyfills.js'
+      - Angular 7.0 +
+        - The vendor.js is merged and minified in the application production file
+          - main.js/app.js
+    - npm install --save <PACKAGE-NAME>   
+  - devDependencies
+    - Used for dev/testing
+    - npm install --save-dev <PACKAGE-NAME>
+  - scripts
+    - Build/Test/Run the application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.5.
 
-## Development server
+<input type="text" id="txt" value="ABC"/> value is static
+	--> value is HTML DOM attribute
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+document.getElementById('txt').value = "PQR"; value is dynamic
+	--> value is DOM property
 
-## Code scaffolding
+Attribuite + Property ==> Property Binding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<input type="text" id="txt" [value]="<PUBLIC-MEMBER-FROM-COMPONENT>"/>
+[value], [href], [ckecked], [disabled]
 
-## Build
+Event Binding
+<input type="button" (click)="<PUBLIC-METHOD-FROM-COMPONENT>"/>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Property Binding + Event Binding ==> Two-Way Binding
+[(ngModel)]
 
-## Running unit tests
+import FormsModule from @angular/forms in import array of NgModule applied on AppModule
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Interpolation AKA Exptression Binding, Read-Only binding of String Memebrs of Component to UI Element
+**Note: Expression Binding will Auto-Transform the Members values into string
+Syntax -->
+   {{<PUBLIC-PROPERTY-FROM-COMPONENT>}}
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+============================================================================================================================================
+Angular Directives
+1. Reusable, Functional, Behavioral, UI Elements or Attributes
+2. 3 Types
+   1. Component Directive
+   2. Structural Directives
+      1. Add/Remove DOM Elements based on Conditions
+         1. *ngFor --> Execure for..of loop on DOM
+         2. *ngIf --> Execute if condition on DOM
+         3. *ngSwich-ngSwitchCase
+   3. Attribute Directives
+      1. DOM Attribute 
+
+========================================================================================================
+
+Day 2: Exercise
+1. Generate Delete Button for each row of Products table. Delete the row when the button is clicked
+2. Add Two radio button above the products table for Sort and Reverse. Sort/Revese the Products table by ProductName when the Sort/Reverse Radio button is clicked.
+3. Update the Product by selecting Product from Products table and show the updated back to the table.
+4. Add a search Textbox above the products table to search products based on ProductName / Category Name  
+
+
+
+
+
+
+
+
+
+
