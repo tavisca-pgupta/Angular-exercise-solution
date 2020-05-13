@@ -48,7 +48,6 @@ export class ProductComponent implements OnInit {
   reverseProducts():void {
     this.products = this.logic.reverseProducts();
   }
-
   searchProducts(query: string){
     this.products = this.logic.searchProducts(query);
   }

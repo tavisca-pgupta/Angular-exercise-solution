@@ -1,9 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductComponent } from './components/productcompopnent/app.product.component';
+import { ProductReactiveFormComponent } from './components/productreactiveformcompopnent/app.productreactiveform.component';
+import { TableDirectiveComponent } from './directives/table.component.directive';
+import { DropDownComponent } from './components/dropdowncomponent/dropdown.component';
 
 // imports: array that imports all standard Angular moaulds and custom
 // extenal modules for the current NG App.
@@ -24,13 +27,16 @@ import { ProductComponent } from './components/productcompopnent/app.product.com
 
 @NgModule({
   declarations: [
-    AppComponent, ProductComponent
+    AppComponent, ProductComponent,
+    ProductReactiveFormComponent,
+    TableDirectiveComponent,
+    DropDownComponent
   ],
   imports: [
-    BrowserModule, FormsModule,
+    BrowserModule, FormsModule, ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [ProductComponent]
+  bootstrap: [ProductReactiveFormComponent]
 })
 export class AppModule { }
