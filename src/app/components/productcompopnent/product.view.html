@@ -4,6 +4,7 @@
             <label>Product Id</label>
             <!--Data Binding Two Way with ngModel-->
             <input type="text" name="ProductId" [(ngModel)]="product.ProductId" class="form-control">
+            <span>{{product.ProductId * 100}}</span>
         </div>
         <div class="form-group">
             <label>Product Name</label>

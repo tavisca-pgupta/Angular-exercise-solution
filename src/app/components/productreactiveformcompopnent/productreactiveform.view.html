@@ -1,0 +1,56 @@
+<h2>The Angular Reactive Form</h2>
+<div class="container">
+    <form name="frmprd" [formGroup]='frmPrd' (ngSubmit)="save()">
+        <div class="form-group">
+            <label>Product Id</label>
+            <input type="text" name="ProductId" formControlName="ProductId" class="form-control">
+            <div class="alert alert-danger" *ngIf="frmPrd.controls.ProductId.dirty && !frmPrd.controls.ProductId.valid">
+                <p *ngIf="frmPrd.controls.ProductId.errors.required">Product Id is required</p>
+                <p *ngIf="frmPrd.controls.ProductId.errors.minlength">Product Id must be 2 digits minimum</p>
+                <p *ngIf="frmPrd.controls.ProductId.errors.maxlength">Product Id must be 6 digits maximum</p>
+                <p *ngIf="frmPrd.controls.ProductId.errors.pattern">Product Id must be positive integer</p>
+                <p *ngIf="frmPrd.controls.ProductId.errors.noteven">Value must be even number</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Product Name</label>
+            <input type="text" name="ProductName" formControlName="ProductName" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Price</label>
+            <input type="text" name="Price" formControlName="Price" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Category</label>
+            <select name="Category" formControlName="Category" class="form-control">
+        <option *ngFor="let c of cats" value="{{c}}">{{c}}</option>
+      </select>
+        </div>
+        <div class="form-group">
+            <!--Event Binding (click)-->
+            <input type="button" value="New" class="btn btn-warning" (click)="clear()">
+            <input type="submit" [disabled]="!frmPrd.valid" value="Save" class="btn btn-success">
+        </div>
+    </form>
+</div>
+<!--The component subscribe to the event emitted by the child component-->
+<!--The data emitted by the child component will be read using
+  the $event object-->
+<app-table-directive [DataSource]="products" (onRowSelected)="getSelectedProduct($event)"></app-table-directive>
+
+<!-- <div class="container">
+    <table class="table table-striped table-bordered table-dark">
+        <thead>
+            <tr>
+                <th *ngFor="let h of headers">{{h}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let prd of products" (click)="getSelectedProduct(prd)">
+                <td *ngFor="let h of headers">
+                    {{prd[h]}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div> -->

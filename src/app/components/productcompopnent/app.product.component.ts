@@ -12,11 +12,13 @@ export class ProductComponent implements OnInit {
   private logic: Logic;
   cats = Categories;
   headers: Array<string>;
+  value: number;
   constructor() {
       this.product = new Product(0, '', 0, '');
       this.products = new Array<Product>();
       this.logic = new Logic();
       this.headers  =new Array<string>();
+      this.value = 0;
   }
 
   // inoked after the ctor
