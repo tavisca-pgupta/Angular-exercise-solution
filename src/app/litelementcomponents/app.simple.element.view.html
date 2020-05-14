@@ -1,0 +1,8 @@
+<h2>The Component with LitElement</h2>
+<input type="text" [(ngModel)]="myname">
+<!--The LitElment
+ btn-click is an event bubbled from element and
+ using on-btn-click the component subscribes to it
+ The parent must use $event obejct to read event data
+-->
+<simple-element [name]="myname" [n1]="myname" on-btn-click="receveData($event)"></simple-element>

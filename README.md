@@ -110,3 +110,15 @@ Angular Tech.
 
 2. Developing Complex UI Application
    1. Micro FrontEnd
+
+=====================================================================
+Day 4: Exercise
+
+1. Create a LitElement, that will work as DataGrid with following features
+   1. Expose DataSource property that will accapt JSON Collection
+   2. Generate Column Headers and Rows Dynamically with following
+      1. Multi-Word Columns must have blankSpace e.g. if property is EmpNo, then column must be Emp No.
+   3. Each Row Shold have CheckBox, so selecting row for following operations
+      1. Delete Row having CheckBox Checked
+   4. The Header must have a column for CheckBox, so that when this is checked/unchecked all rows will be checked/unchecked
+2. Each Column must have sort/reverse facility using Up/Down arrow
