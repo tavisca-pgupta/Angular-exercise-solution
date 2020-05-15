@@ -10,8 +10,13 @@ import { SimpleElementComponent } from './litelementcomponents/app.simple.elemen
 
 // import all LitElements from its path
 import './litelementapp/app.simpleelement.litelement';
-import "./datagridlitelement/datagrid.litelement"
-import { DropDownComponent } from './components/dropdowncomponent/dropdown.component';
+import { RadioListComponent } from './directives/app.rediolist.component';
+import { UtilityServiceComponent } from './components/utilityservicecomponent/app.utilityservice.component';
+import { DeptSenderComponent } from './components/masterdetailscommunication/app.deptsender.component';
+import { EmpReceiverComponent } from './components/masterdetailscommunication/app.empreceiver.component';
+import { SearchComponent } from './components/searchcomponent/search.component';
+import { CustomerComponent } from './components/customercomponent/customer.component';
+import { OrderComponent } from './components/ordercomponent/order.component';
 
 
 
@@ -39,7 +44,13 @@ import { DropDownComponent } from './components/dropdowncomponent/dropdown.compo
     ProductReactiveFormComponent,
     TableDirectiveComponent,
     SimpleElementComponent,
-    DropDownComponent
+    RadioListComponent,
+    UtilityServiceComponent,
+    DeptSenderComponent,
+    EmpReceiverComponent,
+    SearchComponent,
+    OrderComponent,
+    CustomerComponent
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule,
@@ -47,6 +58,6 @@ import { DropDownComponent } from './components/dropdowncomponent/dropdown.compo
   ],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
-  bootstrap: [ProductReactiveFormComponent]
+  bootstrap: [ SearchComponent, CustomerComponent, OrderComponent]
 })
 export class AppModule { }

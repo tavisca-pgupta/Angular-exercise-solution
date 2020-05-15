@@ -1,0 +1,22 @@
+<table>
+    <thead>
+      <tr>
+      <th>OrderId</th>
+      <th>OrderName</th>
+        <th>Date</th>
+        <th>CustomerId</th>
+      <th>OrderQuantity</th>
+        <th>Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let o of filteredOrders">
+      <td>{{o.OrderId}}</td>
+      <td>{{o.OrderName}}</td>
+        <td>{{o.Date}}</td>
+        <td>{{o.CustomerId}}</td>
+      <td>{{o.OrderQuantity}}</td>
+        <td>{{o.Amount}}</td>
+      </tr>
+    </tbody>
+  </table>
