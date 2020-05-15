@@ -23,10 +23,10 @@ Employees.push(new Employee(105, 'E', 20));
 Employees.push(new Employee(106, 'F', 30));
 
 export const Customers: Array<Customer> = new Array<Customer>();
-Customers.push(new Customer(101, "A", "Pune", "a@gmail.com", 1233343122));
-Customers.push(new Customer(102, "B", "Pune", "b@gmail.com", 4566785434));
-Customers.push(new Customer(103, "C", "Mumbai", "c@gmail.com", 7891234567));
-Customers.push(new Customer(104, "D", "Mumbai", "d@gmail.com", 4787876547));
+Customers.push(new Customer(101, "Rahul", "Pune", "a@gmail.com", 1233343122));
+Customers.push(new Customer(102, "Akash", "Pune", "b@gmail.com", 4566785434));
+Customers.push(new Customer(103, "Ashish", "Mumbai", "c@gmail.com", 7891234567));
+Customers.push(new Customer(104, "Arun", "Mumbai", "d@gmail.com", 4787876547));
 
 export const Orders: Array<Order> = new Array<Order>();
 Orders.push(new Order(1, "xyz", "15-05-2020", 101, 30, 200));
