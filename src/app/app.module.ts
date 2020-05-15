@@ -10,6 +10,10 @@ import { SimpleElementComponent } from './litelementcomponents/app.simple.elemen
 
 // import all LitElements from its path
 import './litelementapp/app.simpleelement.litelement';
+import { RadioListComponent } from './directives/app.rediolist.component';
+import { UtilityServiceComponent } from './components/utilityservicecomponent/app.utilityservice.component';
+import { DeptSenderComponent } from './components/masterdetailscommunication/app.deptsender.component';
+import { EmpReceiverComponent } from './components/masterdetailscommunication/app.empreceiver.component';
 
 
 
@@ -36,7 +40,11 @@ import './litelementapp/app.simpleelement.litelement';
     AppComponent, ProductComponent,
     ProductReactiveFormComponent,
     TableDirectiveComponent,
-    SimpleElementComponent
+    SimpleElementComponent,
+    RadioListComponent,
+    UtilityServiceComponent,
+    DeptSenderComponent,
+    EmpReceiverComponent
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule,
@@ -44,6 +52,7 @@ import './litelementapp/app.simpleelement.litelement';
   ],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
-  bootstrap: [SimpleElementComponent]
+  bootstrap: [ DeptSenderComponent,
+    EmpReceiverComponent]
 })
 export class AppModule { }

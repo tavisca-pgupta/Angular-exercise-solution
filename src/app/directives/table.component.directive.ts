@@ -16,11 +16,11 @@ export class TableDirectiveComponent implements OnInit {
   constructor() {
       this._DataSource = new Array<any>();
       this.headers = new Array<string>();
-      this.onRowSelected  =new EventEmitter<any>();
+      this.onRowSelected  = new EventEmitter<any>();
   }
 
   @Input()
-  set DataSource(val: Array<any>) {
+  set DataSource(val: ArrayEventEmitter<any>) {
      if(val.length > 0) {
        this._DataSource = val;
        for(let p in this._DataSource[0]) {
