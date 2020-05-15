@@ -72,4 +72,12 @@ export class ProductReactiveFormComponent implements OnInit {
       console.log(JSON.stringify(evt));
       this.frmPrd.setValue(evt);
   }
+  deleteMultipleProducts(products:Array<Product>)
+  {
+    products.forEach((p) => {
+      this.logic.deleteProduct(p)
+    })
+    this.products = this.logic.getProducts();
+    
+  }
 }
