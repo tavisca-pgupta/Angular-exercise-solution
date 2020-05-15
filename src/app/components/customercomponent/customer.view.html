@@ -11,7 +11,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let c of filteredCustomers">
+      <tr *ngFor="let c of filteredCustomers" (click)="onRowSelected(c)">
       <td>{{c.CustomerId}}</td>
       <td>{{c.CustomerName}}</td>
         <td>{{c.City}}</td>

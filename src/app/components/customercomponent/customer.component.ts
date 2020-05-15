@@ -21,24 +21,30 @@ export class CustomerComponent implements OnInit {
   }
   ngOnInit(): void {
     this.commService.emitValue.subscribe((data) => {
-      if(data.searchQuery != undefined)
+      if(data.searchQuery != undefined){
         this.serchQuery = data.searchQuery;
+        this.filterCustomers();       
+      }
     });
+    this.filterCustomers();  
   }
-  get filteredCustomers() : Array<Customer> {
-    this._filteredCustomers = new Array<Customer>();
-    if (this.serchQuery.length > 0) {
-       this._filteredCustomers = this.customers.filter((c,i) => {
-         return c.CustomerName.toLowerCase().includes(this.serchQuery.toLowerCase()) || c.City.toLowerCase().includes(this.serchQuery.toLowerCase());
-       });
-    } else {
-      this._filteredCustomers = this.customers;
-    }
+  filterCustomers(){
+    this._filteredCustomers = this.customers.filter((c,i) => {
+      return c.CustomerName.toLowerCase().includes(this.serchQuery.toLowerCase()) || c.City.toLowerCase().includes(this.serchQuery.toLowerCase());
+    });
+
     this.commService.onEmiteValue({
-      customerIds: this._filteredCustomers.map((c) => {
-        return c.CustomerId;
-      })
-    })
+     customerIds: this._filteredCustomers.map((c) => {
+       return c.CustomerId;
+     })
+   })
+  }
+  get filteredCustomers() : Array<Customer> { 
     return this._filteredCustomers;
   }
+  onRowSelected(c: Customer)
+  {
+    this.commService.onEmiteValue({customerIds: [c.CustomerId]})
+  }
+
 }

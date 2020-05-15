@@ -20,8 +20,10 @@ export class OrderComponent implements OnInit {
   }
   ngOnInit(): void {
     this.commService.emitValue.subscribe((data) => {
-        if(data.customerIds != undefined)
+        if(data.customerIds != undefined){
+            //alert(data.customerIds)
             this.customerIds = data.customerIds;
+        }
     });
   }
   get filteredOrders() : Array<Order> {
