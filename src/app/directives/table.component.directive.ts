@@ -20,7 +20,7 @@ export class TableDirectiveComponent implements OnInit {
   }
 
   @Input()
-  set DataSource(val: ArrayEventEmitter<any>) {
+  set DataSource(val: Array<any>) {
      if(val.length > 0) {
        this._DataSource = val;
        for(let p in this._DataSource[0]) {

@@ -47,16 +47,16 @@ export class SimpleElement extends LitElement{
     super();
     // this.name = "Polymer Web Component using Lit-Element";
    // this.n1 = 'Tejas';
-    this.n2 = 120;
-    this.n3 = ['A', 'B', 'C'];
-    this.n4 = {id: 101, name: 'P1'};
+    // this.n2 = 120;
+    // this.n3 = ['A', 'B', 'C'];
+    // this.n4 = {id: 101, name: 'P1'};
   }
 
   diplay() {
      // alert(`Value received ${this.name}`);
      const bubbleEvent = new CustomEvent('btn-click', {
        detail: {
-         data: JSON.stringify(this.n4)
+         data: JSON.stringify("")
        },
        bubbles: true,
        composed: true
@@ -80,10 +80,6 @@ export class SimpleElement extends LitElement{
                 ${this.name.toUpperCase()}
              </strong>
              <br/>
-             <p>${this.n1}</p>
-             <p>${this.n2}</p>
-             <p>${this.n3}</p>
-             <p>${JSON.stringify(this.n4)}</p>
           </div>
        </div>
     `;

@@ -141,3 +141,18 @@ Day 5: Exercise
 4. The application will behave as follows
    1. When the customer is selected from customers component the order component will show all orders by customer
    2. When the customer name is searched from the search Textbox, the customer component will show that customer details and the Orders component will show all orders by thet customer, if the city name is entered in the search textbox then all customers from that ciryt must be displayed in the customers component and all orders for all customers from customer component should be displayed in orders component.
+
+======================================================================
+@angular/common/http
+
+1. HttpClientModule
+   1. Register the 'HttpClient' class in global scope of the current angular application.
+      1. HttpClient class is used to make get/post/put/delete calls to externaly hosted REST APIs
+         1. get<T>/post<T>/put<T>/delete<T>
+            1. T can be, primptive type
+            2. T can be array
+            3. T can be BLOB and ArrayBuffer --> Http 2
+         2. Observable<T> is a response from each http method
+            1. Observable is a stream storage (?) from rxjs lib.
+               1. The storage where the async response is stored that is received from the REST API
+      2. The HttpClient is a Singleton object registered by HttpClientModule class

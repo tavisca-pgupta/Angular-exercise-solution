@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,8 @@ import { RadioListComponent } from './directives/app.rediolist.component';
 import { UtilityServiceComponent } from './components/utilityservicecomponent/app.utilityservice.component';
 import { DeptSenderComponent } from './components/masterdetailscommunication/app.deptsender.component';
 import { EmpReceiverComponent } from './components/masterdetailscommunication/app.empreceiver.component';
+import { HttpServiceComponent } from './components/httpservicecomponent/app.httpservice.component';
+import { SecureCallComponent } from './components/securecallcomponent/app.securecall.component';
 
 
 
@@ -44,15 +47,17 @@ import { EmpReceiverComponent } from './components/masterdetailscommunication/ap
     RadioListComponent,
     UtilityServiceComponent,
     DeptSenderComponent,
-    EmpReceiverComponent
+    EmpReceiverComponent,
+    HttpServiceComponent,
+    SecureCallComponent
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
-  bootstrap: [ DeptSenderComponent,
-    EmpReceiverComponent]
+  bootstrap: [ SecureCallComponent]
 })
 export class AppModule { }
