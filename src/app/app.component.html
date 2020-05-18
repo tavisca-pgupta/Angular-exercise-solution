@@ -1,1 +1,14 @@
 <h1>The First Component</h1>
+
+<!--Use of Angular Element for Rendering-->
+<!--Event for the Custom Element must be registered using
+  on- prefix e.g. on-rowClick
+to read the data from $event use event.detail in code -->
+<app-test1-element id="ele" [Source]="depts" on-rowClick="receivedData($event)"></app-test1-element>
+
+<!-- <script>
+    var ele = document.querySelector('app-test1-element');
+    ele.addEventListener('rowClick', function() {
+        alert('dd');
+    });
+</script> -->
