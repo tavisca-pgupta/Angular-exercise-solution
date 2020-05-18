@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>Customers</h1>
+<table class="table table-striped table-bordered table-dark">
+    <thead>
+      <tr>
+      <th>CustomerId</th>
+      <th>CustomerName</th>
+        <th>City</th>
+        <th>Email</th>
+      <th>ContactNumber</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of filteredCustomers" (click)="onRowSelected(c)">
+      <td>{{c.CustomerId}}</td>
+      <td>{{c.CustomerName}}</td>
+        <td>{{c.City}}</td>
+        <td>{{c.Email}}</td>
+      <td>{{c.ContactNumber}}</td>
+        <td>{{c.Amount}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
