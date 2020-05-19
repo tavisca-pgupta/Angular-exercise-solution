@@ -110,3 +110,49 @@ Angular Tech.
 
 2. Developing Complex UI Application
    1. Micro FrontEnd
+
+=====================================================================
+Day 4: Exercise
+
+1. Create a LitElement, that will work as DataGrid with following features
+   1. Expose DataSource property that will accapt JSON Collection
+   2. Generate Column Headers and Rows Dynamically with following
+      1. Multi-Word Columns must have blankSpace e.g. if property is EmpNo, then column must be Emp No.
+   3. Each Row Shold have CheckBox, so selecting row for following operations
+      1. Delete Row having CheckBox Checked
+   4. The Header must have a column for CheckBox, so that when this is checked/unchecked all rows will be checked/unchecked
+2. # Each Column must have sort/reverse facility using Up/Down arrow
+   ==================================================================
+   Angular FUnctionaly Reusability
+3. Model Classes
+   Class Obj =new Class(A(B(C())))
+4. Services
+   1. Class with @Injectable() decorator from @angular/core
+
+=====================================================================
+
+Day 5: Exercise
+
+1. Create three components, the first component has to show list of customers with following properties in table
+   1. CustomerId, CustomerName, City, Email, ContactNumber
+2. The second componeent will show orders by customer with following data properties in table
+   1. OrderId, OrderName, Date, CustomerId, Order Quantity, Amount
+3. The third component that will be a search component with UI as SearchTextBox
+4. The application will behave as follows
+   1. When the customer is selected from customers component the order component will show all orders by customer
+   2. When the customer name is searched from the search Textbox, the customer component will show that customer details and the Orders component will show all orders by thet customer, if the city name is entered in the search textbox then all customers from that ciryt must be displayed in the customers component and all orders for all customers from customer component should be displayed in orders component.
+
+======================================================================
+@angular/common/http
+
+1. HttpClientModule
+   1. Register the 'HttpClient' class in global scope of the current angular application.
+      1. HttpClient class is used to make get/post/put/delete calls to externaly hosted REST APIs
+         1. get<T>/post<T>/put<T>/delete<T>
+            1. T can be, primptive type
+            2. T can be array
+            3. T can be BLOB and ArrayBuffer --> Http 2
+         2. Observable<T> is a response from each http method
+            1. Observable is a stream storage (?) from rxjs lib.
+               1. The storage where the async response is stored that is received from the REST API
+      2. The HttpClient is a Singleton object registered by HttpClientModule class

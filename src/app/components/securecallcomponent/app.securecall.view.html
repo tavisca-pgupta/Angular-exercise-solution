@@ -1,0 +1,66 @@
+<div class="container">
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td>
+                    <div class="container">
+                        <h2>Register User</h2>
+                        <div class="form-group">
+                            <label for="Email">Email</label>
+                            <input type="text" [(ngModel)]="createUser.Email" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="Password">Password</label>
+                            <input type="password" [(ngModel)]="createUser.Password" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="ConfirmPassword">Confirm Password</label>
+                            <input type="password" [(ngModel)]="createUser.ConfirmPassword" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" value="Clear" (click)="clearRegisterInfo()" class="btn btn-default">
+                            <input type="button" value="Register User" (click)="registerUser()" class="btn btn-success">
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="container">
+                        <h2>Login User</h2>
+                        <div class="form-group">
+                            <label for="Email">Email</label>
+                            <input type="text" [(ngModel)]="loginUser.UserName" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="Password">Password</label>
+                            <input type="password" [(ngModel)]="loginUser.Password" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="button" value="Clear" (click)="clearLoginInfo()" class="btn btn-default">
+                            <input type="button" value="Login" (click)="authenticateUser()" class="btn btn-success">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <input type="button" value="Load Products" (click)="getProducts()">
+    <br />
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <td>Product Row Id</td>
+                <td>Product Name>
+                    <td>Price</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let prd of products">
+                <td>{{prd.productRowId}}</td>
+                <td>{{prd.productName}}</td>
+                <td>{{prd.price}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

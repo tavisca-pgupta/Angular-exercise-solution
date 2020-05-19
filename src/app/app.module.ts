@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,9 +15,9 @@ import { RadioListComponent } from './directives/app.rediolist.component';
 import { UtilityServiceComponent } from './components/utilityservicecomponent/app.utilityservice.component';
 import { DeptSenderComponent } from './components/masterdetailscommunication/app.deptsender.component';
 import { EmpReceiverComponent } from './components/masterdetailscommunication/app.empreceiver.component';
-import { SearchComponent } from './components/searchcomponent/search.component';
-import { CustomerComponent } from './components/customercomponent/customer.component';
-import { OrderComponent } from './components/ordercomponent/order.component';
+import { HttpServiceComponent } from './components/httpservicecomponent/app.httpservice.component';
+import { SecureCallComponent } from './components/securecallcomponent/app.securecall.component';
+import { SecurityTokenInterceptorService } from './services/app.securitytokeninterceptor.service';
 
 
 
@@ -48,16 +49,16 @@ import { OrderComponent } from './components/ordercomponent/order.component';
     UtilityServiceComponent,
     DeptSenderComponent,
     EmpReceiverComponent,
-    SearchComponent,
-    OrderComponent,
-    CustomerComponent
+    HttpServiceComponent,
+    SecureCallComponent
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
-  providers: [],
-  bootstrap: [ SearchComponent, CustomerComponent, OrderComponent]
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: SecurityTokenInterceptorService, multi: true}],
+  bootstrap: [ SecureCallComponent]
 })
 export class AppModule { }
