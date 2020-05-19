@@ -1,0 +1,20 @@
+<h2>This is Test 1 Angular Element</h2>
+
+<div>{{message}}</div>
+
+<div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th *ngFor="let h of headers">{{h}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let rec of Source" (click)="selectTableRow(rec)">
+                <td *ngFor="let h of headers">
+                    {{rec[h]}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

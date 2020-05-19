@@ -47,9 +47,9 @@ export class SimpleElement extends LitElement{
     super();
     // this.name = "Polymer Web Component using Lit-Element";
    // this.n1 = 'Tejas';
-    this.n2 = 120;
-    this.n3 = ['A', 'B', 'C'];
-    this.n4 = {id: 101, name: 'P1'};
+    // this.n2 = 120;
+    // this.n3 = ['A', 'B', 'C'];
+    // this.n4 = {id: 101, name: 'P1'};
   }
 
   diplay() {
@@ -68,24 +68,24 @@ export class SimpleElement extends LitElement{
 
 
   render(){
-    return html `
-       <div>
-          <h2> The Simple LitElement from Project-Polymer </h2>
-          <div>
-             <input type="button" value="Click" @click="${this.diplay}"/>
-          </div>
-          <div>
-             <strong>
-                Value Received for Name
-                ${this.name.toUpperCase()}
-             </strong>
-             <br/>
-             <p>${this.n1}</p>
-             <p>${this.n2}</p>
-             <p>${this.n3}</p>
-             <p>${JSON.stringify(this.n4)}</p>
-          </div>
-       </div>
-    `;
+    // return html `
+    //    <div>
+    //       <h2> The Simple LitElement from Project-Polymer </h2>
+    //       <div>
+    //          <input type="button" value="Click" @click="${this.diplay}"/>
+    //       </div>
+    //       <div>
+    //          <strong>
+    //             Value Received for Name
+    //             ${this.name.toUpperCase()}
+    //          </strong>
+    //          <br/>
+    //          <p>${this.n1}</p>
+    //          <p>${this.n2}</p>
+    //          <p>${this.n3}</p>
+    //          <p>${JSON.stringify(this.n4)}</p>
+    //       </div>
+    //    </div>
+    // `;
   }
 }

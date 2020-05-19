@@ -1,7 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, Injector } from '@angular/core';
+import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+// use createCustomElement for making NG-Component as angular
+// element
+import {createCustomElement} from '@angular/elements';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductComponent } from './components/productcompopnent/app.product.component';
@@ -17,7 +21,7 @@ import { DeptSenderComponent } from './components/masterdetailscommunication/app
 import { EmpReceiverComponent } from './components/masterdetailscommunication/app.empreceiver.component';
 import { HttpServiceComponent } from './components/httpservicecomponent/app.httpservice.component';
 import { SecureCallComponent } from './components/securecallcomponent/app.securecall.component';
-import { SecurityTokenInterceptorService } from './services/app.securitytokeninterceptor.service';
+import { Test1ElementComponent } from './elements/app.test1.element';
 
 
 
@@ -50,7 +54,8 @@ import { SecurityTokenInterceptorService } from './services/app.securitytokenint
     DeptSenderComponent,
     EmpReceiverComponent,
     HttpServiceComponent,
-    SecureCallComponent
+    SecureCallComponent,
+    Test1ElementComponent
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule,
@@ -58,7 +63,23 @@ import { SecurityTokenInterceptorService } from './services/app.securitytokenint
     AppRoutingModule
   ],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass: SecurityTokenInterceptorService, multi: true}],
-  bootstrap: [ SecureCallComponent]
+  providers: [],
+  // use entryComponent so that the Angular Elements will be
+  // set for DOM Execution
+  entryComponents: [Test1ElementComponent],
+  bootstrap: [ AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+ // Inject the Injector object in ctor, this will be used
+ // to register the Component as Element and the HTML Tag
+ // will be exposed to Browser's DOM
+ constructor(private injector: Injector){
+
+    const test1Element = createCustomElement(Test1ElementComponent, {injector: this.injector});
+    // define the Custom HTML Tag so that the Element will be
+    // referred in the DOM
+    customElements.define('app-test1-element', test1Element);
+ }
+
+
+}
